@@ -21,13 +21,15 @@ public class AppConfig {
 		// service.setCustomerRepository(getCustomerRepository()); //// to create
 		// constructor repository
 
-		
 		return service;
 	}
+	
+	
+	
 
-	@Bean(name = "customerRepository")
-	public CustomerRepository getCustomerRepository() {
-		return new HibernateCustomerRepositoryImpl();
-
-	}
+//	@Bean(name = "customerRepository")
+//	public CustomerRepository getCustomerRepository() {
+//		return new HibernateCustomerRepositoryImpl();
+//
+//	}
 }
