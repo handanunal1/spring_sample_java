@@ -9,7 +9,6 @@ import com.pluralsight.repository.CustomerRepository;
 
 public class CustomerServiceImpl implements CustomerService {
 
-	@Autowired
 	private CustomerRepository customerRepository;
 	// = new HibernateCustomerRepositoryImpl();
 
@@ -17,10 +16,13 @@ public class CustomerServiceImpl implements CustomerService {
 
 	}
 
+	@Autowired
 	public void setCustomerRepository(CustomerRepository customerRepository) {
 		System.out.println("we are using setter  injection");
 		this.customerRepository = customerRepository;
 	}
+
+	
 
 	public CustomerServiceImpl(CustomerRepository customerRepository) {
 		System.out.println("we are using constructor injection");
