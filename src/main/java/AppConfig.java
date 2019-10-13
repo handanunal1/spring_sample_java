@@ -8,15 +8,18 @@ import com.pluralsight.service.CustomerService;
 import com.pluralsight.service.CustomerServiceImpl;
 
 @Configuration /* Application Context is replaced by this annotation */
-@ComponentScan({"com.pluralsight"})
+@ComponentScan({ "com.pluralsight" })
 public class AppConfig {
 
 	@Bean(name = "customerService")
 	public CustomerService getCustomerService() {
 		// return new CustomerServiceImpl();
-
-		CustomerServiceImpl service = new CustomerServiceImpl(getCustomerRepository());
-		//service.setCustomerRepository(getCustomerRepository());  //// to create constructor repository
+		// CustomerServiceImpl service = new
+		// CustomerServiceImpl(getCustomerRepository());
+		CustomerServiceImpl service = new CustomerServiceImpl();
+		service.setCustomerRepository(getCustomerRepository());
+		// service.setCustomerRepository(getCustomerRepository()); //// to create
+		// constructor repository
 		return service;
 	}
 
